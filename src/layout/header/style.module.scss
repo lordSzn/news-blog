@@ -1,0 +1,26 @@
+
+
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 20px 0;
+  &::after{
+    content: '';
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    display: block;
+    margin: 20px 0;
+  }
+  &Body {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Right {
+    padding: 15px 0 0 0;
+  }
+}

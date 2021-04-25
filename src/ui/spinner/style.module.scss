@@ -1,0 +1,30 @@
+
+@import './../../assets/styles/variables.scss';
+.loadingSpinner{
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+  border: 3px solid $blue;
+  margin-bottom: 10rem;
+  border-radius: 50%;
+  border-top-color: aqua;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+}
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.bounce1{
+
+}
+.bounce2{
+
+}
+.bounce3{
+
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
+@import './../../assets/styles/variables.scss';
+
+.news{
+  padding: 10px 0;
+  color: #fff;
+  max-width: 500px;
+  background-color: $black;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  margin: 50px auto;
+  &Container{
+    padding: 5px 20px 0;
+    margin: 0 auto;
+    p{
+      font-family: 'Newsreader', serif;
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  &Publisher{
+    margin-bottom: 5px;
+    display: block;
+    font-size: 20px;
+  }
+  &Date{
+    display: block;
+  }
+  &Describe{
+    align-items: center;
+    display: flex;
+    margin-bottom: 13px;
+  }
+  &AuthorAvatar{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 8px 15px;
+    font-size: 23px;
+    background-color: $red;
+    margin-right: 10px;
+  }
+  &Prewie{
+    margin-bottom: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  &LearnMore{ 
+    text-transform: uppercase;
+    color: $blue !important;
+    display: inline-block;
+    &::after{
+      content: '';
+      bottom: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $blue; 
+    } 
+  }
+}

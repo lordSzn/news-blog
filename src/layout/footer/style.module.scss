@@ -1,0 +1,47 @@
+
+
+.footer{
+  &::before{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+  }
+}
+.Body{
+  padding: 25px 0;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.column{
+  color: black;
+  &Title{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  a{
+    color: black;
+    display: block;
+  }
+}
+
+.body{
+  display: flex;
+  align-items: flex-end;
+}
+.Logo{
+  background-color: #686868;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.Title{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  max-width: 100px;
+}
