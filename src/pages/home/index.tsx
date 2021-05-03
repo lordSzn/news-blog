@@ -1,37 +1,37 @@
-import {  useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { newsSelectors } from "../../features"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { newsActions, newsSelectors } from "../../features"
 import { Footer, Main } from "../../layout/index"
 import { Header } from "../../layout/index"
+import { useAction } from "../../lib/store/hooks/useActions"
 import { Loader, News } from "../../ui"
 import style from "./style.module.scss"
 
-export const Home: React.FC = () => {
-  const dispatch = useDispatch()
+export const Home = () => {
+  const { fetchNews } = useAction(newsActions)
   const loadingStatus = useSelector(newsSelectors.loading)
   const news = useSelector(newsSelectors.partNews)
   useEffect(() => {
-    if (loadingStatus === 'idle'){
-      dispatch({type: 'fetchNews'})
+    if (loadingStatus === "idle") {
+      fetchNews()
     }
-  }, [dispatch,loadingStatus])
-  if (loadingStatus === 'pending'){
+  }, [fetchNews, loadingStatus])
+  if (loadingStatus === "pending") {
     return (
       <div className={style.loaderCenter}>
-        <Loader/>
+        <Loader />
       </div>
     )
   }
   return (
     <div className={style.wrapper}>
       <Header />
-        <Main>
-          {
-            news.map(n=><News key={n.id} {...n}/>)
-          }
-        </Main>
+      <Main>
+        {
+          // news.map(n=><News key={n.id} {...n}/>)
+        }
+      </Main>
       <Footer />
     </div>
   )
 }
-

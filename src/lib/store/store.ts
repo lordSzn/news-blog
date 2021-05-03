@@ -1,3 +1,4 @@
+import { categoryReducer } from './../../features/index';
 import { newsReducer } from './../../features/index';
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
@@ -8,7 +9,8 @@ export const sagaMiddleware = createSagaMiddleware()
 
 export const store = configureStore({
   reducer: {
-    news: newsReducer
+    news: newsReducer,
+    category: categoryReducer
   },
   middleware:[...getDefaultMiddleware({thunk: false}),sagaMiddleware],
   devTools: true

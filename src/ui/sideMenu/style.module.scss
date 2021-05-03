@@ -1,0 +1,39 @@
+@import './../../assets/styles/variables.scss';
+.sideMenu {
+  background-color: rgb(21, 24, 28);
+  width: 300px;
+  border-radius: 10px;
+}
+.list{
+  font-family: inherit;
+  color: #fff;
+  display: block;
+}
+.title {
+  font-size: 18px;
+  padding: 20px;
+  border-bottom: 1px solid rgb(47, 51, 54);
+}
+.link {
+  padding: 20px;
+  border-bottom: 1px solid rgb(47, 51, 54);
+  cursor: pointer;
+  &:last-child{
+    border-bottom: 0;
+    a{
+      color: $blue;
+      display: inline-block;
+      &::after{
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $blue;
+      }
+    }
+  }
+  a {
+    text-transform: uppercase;
+   font-size: 15px;
+  }
+}

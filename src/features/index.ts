@@ -1,6 +1,8 @@
-
-export {newsLoading, newsReceived} from './news/reducer'
-export {newsReducer} from './news/reducer'
+export {newsReducer} from './news/index'
 export {newsSelectors} from './news/index'
-export {fetchNews} from './news/index'
-export {partNews} from './news/selectors'
+export {newsActions} from './news/index'
+
+
+export {categoryReducer} from './category/index'
+export {categoryActions} from './category/index'
+export {categorySelectors} from './category/index'

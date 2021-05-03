@@ -1,14 +1,16 @@
 import { call, put, takeEvery } from "@redux-saga/core/effects"
-import { REQUEST_NEWS } from "../../../api"
-import { newsLoading,newsReceived } from "./../reducer"
+import { newsActions } from ".."
+import { REQUEST } from "../../../api"
+import { ActionTypes } from "../types"
+
 
 export function* fetchNews() {
   try {
-    yield put(newsLoading())
-    const {data} = yield call(REQUEST_NEWS.getNews)
-    yield put(newsReceived(data.news))
+    yield put(newsActions.newsLoading())
+    const {data} = yield call(REQUEST.getNews)
+    yield put(newsActions.newsReceived(data.news))
   } catch (e) {}
 }
 export function* newsWatcher() {
-  yield takeEvery("fetchNews", fetchNews)
+  yield takeEvery(ActionTypes.FETCHNEWS, fetchNews)
 }
