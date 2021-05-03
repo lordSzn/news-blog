@@ -1,25 +1,24 @@
 import { FC } from "react"
 import { NewsType } from "../../@types/entity"
+import { Avatar } from "../avatar/index"
 import style from "./style.module.scss"
 
 
 
 export const News: FC<NewsType> = ({
-  title,
   author,
   description,
   image,
-  language,
   published,
   url,
 }) => {
-  const initialsNameAuthor = author[0]
+  //TODO блевотина
   const urlImage = image === 'None' ? '' : image
   return (
     <div className={style.news}>
       <div className={style.newsContainer}>
         <div className={style.newsDescribe}>
-          <div className={style.newsAuthorAvatar}>{initialsNameAuthor}</div>
+          <Avatar author={author}/>
           <ul>
             <li className={style.newsPublisher}>{author}</li>
             <li className={style.newsDate}>{published}</li>

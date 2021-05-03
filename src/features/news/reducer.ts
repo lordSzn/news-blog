@@ -38,4 +38,4 @@ export const newsSlice = createSlice({
   }
 })
 export const newsReducer = newsSlice.reducer
-export const {newsLoading, newsReceived} = newsSlice.actions
+export const {newsLoading, newsReceived,newsFail} = newsSlice.actions

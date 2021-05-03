@@ -10,7 +10,7 @@ import style from "./style.module.scss"
 export const Home = () => {
   const { fetchNews } = useAction(newsActions)
   const loadingStatus = useSelector(newsSelectors.loading)
-  const news = useSelector(newsSelectors.partNews)
+  const news = useSelector(newsSelectors.news)
   useEffect(() => {
     if (loadingStatus === "idle") {
       fetchNews()
@@ -23,12 +23,17 @@ export const Home = () => {
       </div>
     )
   }
+  if (loadingStatus === "fail"){
+    return(
+      <div>An error has occurred 😰 </div>
+    )
+  }
   return (
     <div className={style.wrapper}>
       <Header />
       <Main>
         {
-          // news.map(n=><News key={n.id} {...n}/>)
+          news.map(n=><News key={n.id} {...n}/>)
         }
       </Main>
       <Footer />

@@ -1,5 +1,5 @@
 import { ActionTypes } from "./types";
-export {newsLoading, newsReceived} from './reducer'
+export {newsLoading, newsReceived,newsFail} from './reducer'
 
 interface fetchNewsType{
   type: ActionTypes.FETCHNEWS

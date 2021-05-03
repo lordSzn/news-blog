@@ -9,7 +9,9 @@ export function* fetchNews() {
     yield put(newsActions.newsLoading())
     const {data} = yield call(REQUEST.getNews)
     yield put(newsActions.newsReceived(data.news))
-  } catch (e) {}
+  } catch (e) {
+    yield put(newsActions.newsFail())
+  }
 }
 export function* newsWatcher() {
   yield takeEvery(ActionTypes.FETCHNEWS, fetchNews)
