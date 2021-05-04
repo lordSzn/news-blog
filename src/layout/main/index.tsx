@@ -1,5 +1,4 @@
 import { FC } from "react"
-import { SideMenu } from "../../ui"
 import style from "./style.module.scss"
 
 

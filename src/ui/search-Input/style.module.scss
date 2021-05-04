@@ -1,7 +1,7 @@
 .search {
   border-radius: 10px;
   padding: 15px;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@
   &Txt {
     background-color: transparent;
     color: black;
-    width: 220px;
+    width: 240px;
     font-size: 15px;
     margin-right: 10px;
     &::placeholder{
@@ -18,3 +18,4 @@
     }
   }
 }
+

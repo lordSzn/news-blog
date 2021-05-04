@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { categoryActions, categorySelectors } from "../../features"
-import { useAction } from "../../lib/store/hooks/useActions"
+import { useAction } from "../../lib/store/hooks/index"
 
 import style from "./style.module.scss"
 

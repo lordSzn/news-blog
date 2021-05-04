@@ -1,56 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
-@import './../../assets/styles/variables.scss';
+@import url("https://fonts.googleapis.com/css2?family=Newsreader&display=swap");
+@import "./../../assets/styles/variables.scss";
 
-.news{
+.news {
   padding: 10px 0;
   color: #fff;
   max-width: 500px;
   background-color: $black;
   border-radius: 5px;
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   padding-bottom: 10px;
   margin-bottom: 30px;
   margin: 50px auto;
-  &Container{
+  &Container {
     padding: 5px 20px 0;
     margin: 0 auto;
-    p{
-      font-family: 'Newsreader', serif;
+    p {
+      font-family: "Newsreader", serif;
       font-size: 15px;
       line-height: 20px;
       margin-bottom: 10px;
     }
   }
-  &Publisher{
+  &Publisher {
     margin-bottom: 5px;
     display: block;
     font-size: 20px;
   }
-  &Date{
+  &Date {
     display: block;
   }
-  &Describe{
+  &Describe {
     align-items: center;
     display: flex;
     margin-bottom: 13px;
   }
-  &Prewie{
+  &Prewie {
     margin-bottom: 10px;
-    img{
+    cursor: pointer;
+    img {
       width: 100%;
+      max-height: 400px;
     }
   }
-  &LearnMore{ 
+  &LearnMore {
     text-transform: uppercase;
     color: $blue !important;
     display: inline-block;
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       bottom: 0;
       display: block;
       height: 1px;
       width: 100%;
-      background-color: $blue; 
-    } 
+      background-color: $blue;
+    }
   }
 }

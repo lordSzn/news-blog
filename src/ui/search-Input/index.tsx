@@ -1,11 +1,23 @@
-import style from './style.module.scss'
+import React, { useState } from "react"
+import { newsActions } from "../../features"
+import { useDebounce } from "../../lib/store/hooks"
+import style from "./style.module.scss"
 
-//TODO will add form
-export function SearchInput(){
-  return(
+export function SearchInput() {
+  const [value, setValue] = useState<string>("")
+  useDebounce(value,1000,newsActions.searchNews)
+  return (
     <form className={style.search}>
-      <input className={style.searchTxt} type="text" placeholder="Type to search"/>
-        <i className="fas fa-search "></i>
+      <input
+        className={style.searchTxt}
+        value={value}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setValue(e.target.value)
+        }
+        type="text"
+        placeholder="Type to search"
+      />
+      <i className="fas fa-search "></i>
     </form>
   )
 }

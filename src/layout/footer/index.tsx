@@ -1,4 +1,3 @@
-import { Logo } from "../../ui"
 import style from "./style.module.scss"
 
 export function Footer() {

@@ -1,33 +1,33 @@
-import { FC } from "react";
-import { Route, Switch } from "react-router";
-import { Error404Page } from "./pages/error404Page";
-import { Home } from "./pages/home";
+import { FC } from "react"
+import { Route, Switch } from "react-router"
+import { Error404Page } from "./pages/error404Page"
+import { Home } from "./pages/home"
 
-interface RouteItemsType{
+interface RouteItemsType {
   path?: string
   name?: string
   isProtected?: boolean
   component?: FC
-  exact?:boolean
+  exact?: boolean
 }
 
-export const routeList:RouteItemsType[] = [
+export const routeList: RouteItemsType[] = [
   {
-    path: '/',
+    path: "/",
     exact: true,
-    component: Home
+    component: Home,
   },
   {
-    path: '*',
-    component: Error404Page
-  }
+    path: "*",
+    component: Error404Page,
+  },
 ]
 export const Routes = () => {
-  return(
+  return (
     <Switch>
-      {
-        routeList.map((route,i)=><Route key={i} {...route}/>)
-      }
+      {routeList.map((route, i) => (
+        <Route key={i} {...route} />
+      ))}
     </Switch>
   )
 }

@@ -1,9 +1,8 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { newsActions, newsSelectors } from "../../features"
-import { Footer, Main } from "../../layout/index"
-import { Header } from "../../layout/index"
-import { useAction } from "../../lib/store/hooks/useActions"
+import { Main } from "../../layout"
+import { useAction } from "../../lib/store/hooks/index"
 import { Loader, News } from "../../ui"
 import style from "./style.module.scss"
 
@@ -12,10 +11,8 @@ export const Home = () => {
   const loadingStatus = useSelector(newsSelectors.loading)
   const news = useSelector(newsSelectors.news)
   useEffect(() => {
-    if (loadingStatus === "idle") {
-      fetchNews()
-    }
-  }, [fetchNews, loadingStatus])
+    fetchNews()
+  }, [fetchNews])
   if (loadingStatus === "pending") {
     return (
       <div className={style.loaderCenter}>
@@ -23,20 +20,14 @@ export const Home = () => {
       </div>
     )
   }
-  if (loadingStatus === "fail"){
-    return(
-      <div>An error has occurred 😰 </div>
-    )
+  if (loadingStatus === "fail") {
+    return <div>An error has occurred 😰 </div>
   }
   return (
-    <div className={style.wrapper}>
-      <Header />
-      <Main>
-        {
-          news.map(n=><News key={n.id} {...n}/>)
-        }
-      </Main>
-      <Footer />
-    </div>
+    <Main>
+      {news.map((n) => (
+        <News key={n.id} {...n} />
+      ))}
+    </Main>
   )
 }

@@ -1,14 +1,14 @@
-import { BrowserRouter } from 'react-router-dom';
-import './assets/styles/nullstyle.scss'
-import { Routes } from './routes';
+import { BrowserRouter } from "react-router-dom"
+import "./assets/styles/nullstyle.scss"
+import { Footer, Header } from "./layout"
+import { Routes } from "./routes"
 
-
- 
 export function App() {
   return (
     <BrowserRouter>
-      <Routes/>
-    </BrowserRouter>  
-  );
+      <Header />
+      <Routes />
+      <Footer />
+    </BrowserRouter>
+  )
 }
-

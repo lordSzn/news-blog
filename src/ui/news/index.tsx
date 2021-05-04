@@ -6,14 +6,14 @@ import style from "./style.module.scss"
 
 
 export const News: FC<NewsType> = ({
+  title,
   author,
   description,
   image,
   published,
   url,
 }) => {
-  //TODO блевотина
-  const urlImage = image === 'None' ? '' : image
+  const date = new Date(Date.parse(published)).toString()
   return (
     <div className={style.news}>
       <div className={style.newsContainer}>
@@ -21,14 +21,12 @@ export const News: FC<NewsType> = ({
           <Avatar author={author}/>
           <ul>
             <li className={style.newsPublisher}>{author}</li>
-            <li className={style.newsDate}>{published}</li>
+            <li className={style.newsDate}>{date}</li>
           </ul>
         </div>
       </div>
       <div className={style.newsPrewie}>
-        {
-          urlImage && <img src={urlImage} alt="" />
-        }       
+       <img src={image} alt=""/>    
       </div>
       <div className={style.newsContainer}> 
         <p>{description}</p>
