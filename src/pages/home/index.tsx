@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
+
 import { newsActions, newsSelectors } from "../../features"
 import { Main } from "../../layout"
 import { useAction } from "../../lib/store/hooks/index"

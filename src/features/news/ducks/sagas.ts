@@ -1,6 +1,5 @@
-import { FetchSearchNews } from "./../actions"
+import { FetchSearchNews } from "./../types"
 import { call, put, takeEvery } from "@redux-saga/core/effects"
-import { Action } from "redux"
 import { newsActions } from ".."
 import { REQUEST } from "../../../api"
 import { ActionTypes } from "../types"
@@ -24,7 +23,8 @@ function* fetchSearchNews({ payload }: FetchSearchNews) {
     yield put(newsActions.newsFail())
   }
 }
-//TODO статусы загрузки не правильно спроектированы
+
 export function* newsWatcher() {
   yield takeEvery(ActionTypes.FETCHNEWS, fetchNews)  
+  yield takeEvery(ActionTypes.SEARCHNEWS,fetchSearchNews)
 }

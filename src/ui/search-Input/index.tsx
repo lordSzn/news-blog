@@ -5,9 +5,10 @@ import style from "./style.module.scss"
 
 export function SearchInput() {
   const [value, setValue] = useState<string>("")
-  useDebounce(value,1000,newsActions.searchNews)
+  useDebounce(value, 1000, newsActions.searchNews)
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>e.preventDefault() 
   return (
-    <form className={style.search}>
+    <form className={style.search} onSubmit={handleSubmit}>
       <input
         className={style.searchTxt}
         value={value}
