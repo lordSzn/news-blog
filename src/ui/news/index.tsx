@@ -11,6 +11,7 @@ export const News: FC<NewsType> = ({
   published,
   url,
 }) => {
+  //TODO блевота...
   const date = new Date(Date.parse(published)).toString()
   const errorEventHandler = (e: SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.style.display = "none"

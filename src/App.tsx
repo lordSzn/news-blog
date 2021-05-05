@@ -7,11 +7,12 @@ import { Routes } from "./routes"
 
 export function App() {
   const history = useHistory()
+  const language = navigator.language.split("-")[0]
   useEffect(() => {
     if (window.location.pathname === "/") {
-      history.push("news/ru")
+      history.push(`news/${language}`)
     }
-  }, [history])
+  }, [history, language])
   return (
     <Wrapper>
       <Header />

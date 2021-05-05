@@ -6,12 +6,12 @@ import { App } from "./App"
 import { store } from "./lib/store/store"
 
 render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
         <App />
-      </React.StrictMode>
-    </Provider>
-  </BrowserRouter>,
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>,
   document.querySelector("#root")
 )
