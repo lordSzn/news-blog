@@ -11,9 +11,9 @@ const instance = axios.create({
 })
 
 export const REQUEST = {
-  getNews() {
+  getNews(language: string) {
     return instance.get<ResponceNewsType>(
-      `/latest-news?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB`
+      `/latest-news?language=${language}&apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB`
     )
   },
   getLanguages() {
@@ -23,13 +23,11 @@ export const REQUEST = {
     return instance.get<ResponceCategoryType>(`/available/category`)
   },
   searchNews(keywords: string) {
-    return instance
-      .get<ResponceNewsType>(
-        `/search?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB&keywords=${keywords}`,
-        {
-          timeout: 4000,
-        }
-      )
+    return instance.get<ResponceNewsType>(
+      `/search?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB&keywords=${keywords}`,
+      {
+        timeout: 4000,
+      }
+    )
   },
 }
-//TODO подумать над поиском поменять может в саге

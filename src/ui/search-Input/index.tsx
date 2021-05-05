@@ -17,7 +17,7 @@ export function SearchInput() {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)
         }
-        type="text"
+        type="search"
         placeholder="Type to search"
       />
       <i className="fas fa-search "></i>

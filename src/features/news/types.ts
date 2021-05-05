@@ -8,6 +8,7 @@ export enum ActionTypes {
 
 export interface fetchNewsType extends Action<ActionTypes>{
   type: ActionTypes.FETCHNEWS
+  payload: string
 }
 export interface FetchSearchNews extends Action<ActionTypes>{
   type: ActionTypes.SEARCHNEWS

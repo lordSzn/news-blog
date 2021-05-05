@@ -13,7 +13,7 @@ interface RouteItemsType {
 
 export const routeList: RouteItemsType[] = [
   {
-    path: "/",
+    path: "/news/:language",
     exact: true,
     component: Home,
   },
