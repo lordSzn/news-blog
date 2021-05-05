@@ -24,21 +24,37 @@ export function Footer() {
           >
             List api
           </a>
+          <a href="https://risen.dev/posts/my-perfect-redux-architecture/"
+          target="noopener"
+          >
+           Source 
+          </a>
+          <a href="https://github.com/feature-sliced"
+          target="noopener"
+          >
+           feature-sliced 
+          </a>
         </div>
         <div className={style.column}>
           <div className={style.columnTitle}>Social network</div>
-          <ul>
+          <ul className={style.listSocial}>
             <li>
-              <i className="fab fa-twitter"></i>
+              <a href="https://twitter.com/RKuzhin" target="noopener">
+                <i className="fab fa-twitter"></i>
+                My Twitter
+              </a>
             </li>
             <li>
-              <i className="fab fa-vk"></i>
+              <a href="https://vk.com/zxqqqqqqq" target="noopener">
+                <i className="fab fa-vk"></i>
+                My VK
+              </a>
             </li>
             <li>
-              <i className="fab fa-github"></i>
-            </li>
-            <li>
-              <i className="fab fa-instagram"></i>
+              <a href="https://github.com/robert200222" target="noopener">
+                <i className="fab fa-github"></i>
+                My github
+              </a>
             </li>
           </ul>
         </div>
@@ -46,8 +62,3 @@ export function Footer() {
     </footer>
   )
 }
-//
-//  <a href="https://github.com/robert200222" target="noopener">
-//GitHub
-//</a>
-///

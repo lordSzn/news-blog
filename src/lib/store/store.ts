@@ -14,7 +14,7 @@ export const store = configureStore({
     category: categoryReducer
   },
   middleware:[...getDefaultMiddleware({thunk: false}),sagaMiddleware],
-  devTools: true
+  devTools: process.env.NODE_ENV === 'development'
 })
 sagaMiddleware.run(rootSaga)
 export type RootStateType = ReturnType<typeof store.getState>

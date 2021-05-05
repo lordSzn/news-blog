@@ -1,21 +1,35 @@
 import axios from "axios"
-import { ResponceCategoryType, ResponceLanguagesType, ResponceNewsType } from "../@types/responce"
+
+import {
+  ResponceCategoryType,
+  ResponceLanguagesType,
+  ResponceNewsType,
+} from "../@types/responce"
 
 const instance = axios.create({
   baseURL: `https://api.currentsapi.services/v1`,
 })
 
 export const REQUEST = {
-  getNews(){
-    return instance.get<ResponceNewsType>(`/latest-news?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB`)
+  getNews() {
+    return instance.get<ResponceNewsType>(
+      `/latest-news?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB`
+    )
   },
-  getLanguages(){
+  getLanguages() {
     return instance.get<ResponceLanguagesType>(`/available/languages`)
   },
-  getCategory(){
+  getCategory() {
     return instance.get<ResponceCategoryType>(`/available/category`)
   },
-  searchNews(keywords: string){
-    return instance.get<ResponceNewsType>(`/search?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB&keywords=${keywords}`)
-  }
+  searchNews(keywords: string) {
+    return instance
+      .get<ResponceNewsType>(
+        `/search?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB&keywords=${keywords}`,
+        {
+          timeout: 4000,
+        }
+      )
+  },
 }
+//TODO подумать над поиском поменять может в саге

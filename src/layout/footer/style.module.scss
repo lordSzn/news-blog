@@ -1,6 +1,7 @@
 
 
 .footer{
+  font-size: 15px;
   &::before{
     content: '';
     display: block;
@@ -27,7 +28,13 @@
     display: block;
   }
 }
-
+.listSocial{
+  margin-top: 5px;
+  font-weight: 700;
+  li{
+    margin-bottom: 5px;
+  }
+}
 .body{
   display: flex;
   align-items: flex-end;

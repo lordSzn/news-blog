@@ -37,10 +37,10 @@
   }
   &Prewie {
     margin-bottom: 10px;
-    cursor: pointer;
     img {
       width: 100%;
       max-height: 400px;
+      cursor: pointer;
     }
   }
   &LearnMore {
@@ -56,4 +56,14 @@
       background-color: $blue;
     }
   }
+}
+.contentBottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.follow{
+  font-size: 20px;
+  color: $blue;
+  background-color: transparent;
 }
