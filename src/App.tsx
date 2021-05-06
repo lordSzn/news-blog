@@ -10,7 +10,7 @@ export function App() {
   const language = navigator.language.split("-")[0]
   useEffect(() => {
     if (window.location.pathname === "/") {
-      history.push(`news/${language}`)
+      history.push(`${language}/news`)
     }
   }, [history, language])
   return (
@@ -23,3 +23,4 @@ export function App() {
     </Wrapper>
   )
 }
+//TODO favorites page

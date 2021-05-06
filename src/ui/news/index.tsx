@@ -5,14 +5,13 @@ import { Avatar } from "../avatar/index"
 import style from "./style.module.scss"
 
 export const News: FC<NewsType> = ({
+  id,
   author,
   description,
   image,
   published,
   url,
 }) => {
-  //TODO блевота...
-  const date = new Date(Date.parse(published)).toString()
   const errorEventHandler = (e: SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.style.display = "none"
   }
@@ -23,15 +22,13 @@ export const News: FC<NewsType> = ({
           <Avatar author={author} />
           <ul>
             <li className={style.newsPublisher}>{author}</li>
-            <li className={style.newsDate}>{date}</li>
+            <li className={style.newsDate}>{published}</li>
           </ul>
         </div>
       </div>
-      {image !== "None" ? (
-        <div className={style.newsPrewie}>
-          <img src={image} alt="" onError={errorEventHandler} />
-        </div>
-      ) : null}
+      <div className={style.newsPrewie}>
+        <img src={image} alt="" onError={errorEventHandler} />
+      </div>
       <div className={style.newsContainer}>
         <p>{description}</p>
         <div className={style.contentBottom}>

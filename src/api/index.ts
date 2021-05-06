@@ -1,2 +1,2 @@
-export {requests} from './requests';
-
+import * as requests from "./requests"
+export { requests }

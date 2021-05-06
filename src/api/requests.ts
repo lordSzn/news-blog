@@ -5,31 +5,24 @@ import {
 } from "./../@types/responce"
 import { request } from "./config"
 
-const newsGet = (language: string) =>
+export const newsGet = (language: string) =>
   request<ResponceNewsType>({
     method: "get",
     url: `/latest-news?language=${language}&apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB`,
   })
-const languageGet = () =>
+export const languageGet = () =>
   request<ResponceLanguagesType>({
     method: "get",
     url: `/available/languages`,
   })
-const categoryGet = () =>
+export const categoryGet = () =>
   request<ResponceCategoryType>({
     method: "get",
     url: `/available/category`,
   })
-const newsSearch = (keywords: string) =>
+export const newsSearch = (keywords: string) =>
   request<ResponceNewsType>({
     method: "get",
     url: `/search?apiKey=yqE6vMJQ_Sb058S1bUOifx1UQGI8OzlE1zTbqcy33jElxQdB&keywords=${keywords}`,
     timeout: 4000,
   })
-
-  export const requests = {
-    newsGet,
-    languageGet,
-    categoryGet,
-    newsSearch
-  }

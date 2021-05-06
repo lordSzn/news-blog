@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useParams } from "react-router"
 
 import { newsActions, newsSelectors } from "../../features"
-import { useAction } from "../../lib/store/hooks/index"
+import { useAction } from "../../lib/store/hooks"
 import { Loader, News } from "../../ui"
 import style from "./style.module.scss"
 

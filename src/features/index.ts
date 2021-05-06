@@ -1,8 +1,8 @@
-export {newsReducer} from './news/index'
-export {newsActions} from './news/index'
-export {newsSelectors} from './news/index'
+export { newsReducer } from "./news"
+export { newsActions } from "./news"
+export { newsSelectors } from "./news"
 
+export { categoryReducer } from "./category"
+export { categoryActions } from "./category"
+export { categorySelectors } from "./category"
 
-export {categoryReducer} from './category/index'
-export {categoryActions} from './category/index'
-export {categorySelectors} from './category/index'

@@ -2,8 +2,8 @@ import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
 
 import { rootSaga } from './root-saga';
-import { newsReducer } from './../../features/index';
-import { categoryReducer } from './../../features/index';
+import { newsReducer } from './../../features';
+import { categoryReducer } from './../../features';
 
 
 export const sagaMiddleware = createSagaMiddleware()
@@ -11,7 +11,7 @@ export const sagaMiddleware = createSagaMiddleware()
 export const store = configureStore({
   reducer: {
     news: newsReducer,
-    category: categoryReducer
+    category: categoryReducer,
   },
   middleware:[...getDefaultMiddleware({thunk: false}),sagaMiddleware],
   devTools: process.env.NODE_ENV === 'development'
