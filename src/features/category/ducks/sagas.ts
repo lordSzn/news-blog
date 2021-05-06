@@ -1,14 +1,14 @@
 import { call, put, takeEvery } from "@redux-saga/core/effects";
 import { categoryActions } from "..";
-import { REQUEST } from "../../../api";
+import { requests } from "../../../api/index";
 import { ActionTypes } from "../types";
 
 
 export function* fetchCategory(){
   try{
     yield put(categoryActions.categoryLoading())
-    const {data} = yield call(REQUEST.getCategory)
-    yield put(categoryActions.categoryReceived(data.category))
+    const {category} = yield call(requests.categoryGet)
+    yield put(categoryActions.categoryReceived(category))
   }catch(e){
     yield put(categoryActions.categoryFailLoading('error'))
   }

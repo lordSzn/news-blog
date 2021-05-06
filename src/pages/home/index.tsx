@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import { useParams } from "react-router"
 
 import { newsActions, newsSelectors } from "../../features"
-import { Main } from "../../layout"
 import { useAction } from "../../lib/store/hooks/index"
 import { Loader, News } from "../../ui"
 import style from "./style.module.scss"
@@ -28,13 +27,17 @@ export const Home = () => {
     )
   }
   if (loadingStatus === "fail") {
-    return <div>An error has occurred 😰 </div>
+    return (
+      <div className={style.error}>
+        <h1>An error has occurred 😰</h1>{" "}
+      </div>
+    )
   }
   return (
-    <Main>
+    <>
       {news.map((n) => (
         <News key={n.id} {...n} />
       ))}
-    </Main>
+    </>
   )
 }

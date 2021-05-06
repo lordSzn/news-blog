@@ -1,2 +1,2 @@
-export {useAction} from './use-actions'
-export {useDebounce} from './use-debounce'
+export * from "./use-actions"
+export * from "./use-debounce"

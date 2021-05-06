@@ -2,8 +2,8 @@ import { useEffect } from "react"
 import { useHistory } from "react-router"
 
 import "./assets/styles/nullstyle.scss"
-import { Footer, Header, Wrapper } from "./layout"
-import { Routes } from "./routes"
+import { Footer, Header, Main, Wrapper } from "./layout"
+import { Routes } from "./pages/routes"
 
 export function App() {
   const history = useHistory()
@@ -16,7 +16,9 @@ export function App() {
   return (
     <Wrapper>
       <Header />
-      <Routes />
+      <Main>
+        <Routes />
+      </Main>
       <Footer />
     </Wrapper>
   )

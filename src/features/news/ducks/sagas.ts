@@ -1,14 +1,14 @@
 import { fetchNewsType, FetchSearchNews } from "./../types"
 import { call, put, takeEvery } from "@redux-saga/core/effects"
 import { newsActions } from ".."
-import { REQUEST } from "../../../api"
+import { requests } from "../../../api/index"
 import { ActionTypes } from "../types"
 
 function* fetchNews({payload}: fetchNewsType) {
   try {
     yield put(newsActions.newsLoading())
-    const { data } = yield call(REQUEST.getNews,payload)
-    yield put(newsActions.newsReceived(data.news))
+    const { news } = yield call(requests.newsGet,payload)
+    yield put(newsActions.newsReceived(news))
   } catch {
     yield put(newsActions.newsFail())
   }
@@ -17,8 +17,8 @@ function* fetchNews({payload}: fetchNewsType) {
 function* fetchSearchNews({ payload }: FetchSearchNews) {
   try {
     yield put(newsActions.newsLoading())
-    const { data } = yield call(REQUEST.searchNews, payload)
-    yield put(newsActions.newsReceived(data.news))
+    const { news } = yield call(requests.newsSearch, payload)
+    yield put(newsActions.newsReceived(news))
   } catch {
     yield put(newsActions.newsFail())
   }
