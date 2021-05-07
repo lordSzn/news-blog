@@ -34,5 +34,5 @@ const categorySlice = createSlice({
     }
   }
 })
-export const categoryReducer = categorySlice.reducer
+export const reducer = categorySlice.reducer
 export const {categoryLoading,categoryReceived,categoryFailLoading} = categorySlice.actions

@@ -23,4 +23,3 @@ export function App() {
     </Wrapper>
   )
 }
-//TODO favorites page

@@ -34,5 +34,5 @@ export const newsSlice = createSlice({
     }
   }
 })
-export const newsReducer = newsSlice.reducer
+export const reducer = newsSlice.reducer
 export const {newsLoading, newsReceived,newsFail} = newsSlice.actions

@@ -1,4 +1,4 @@
-import { fetchNewsType, FetchSearchNews } from "./../types"
+import { fetchNewsType, FetchSearchNews } from './../actions';
 import { call, put, takeEvery } from "@redux-saga/core/effects"
 import { newsActions } from ".."
 import { requests } from "../../../api/index"
@@ -6,7 +6,7 @@ import { ActionTypes } from "../types"
 
 function* fetchNews({payload}: fetchNewsType) {
   try {
-    yield put(newsActions.newsLoading())
+    yield put(newsActions.newsLoading())    
     const { news } = yield call(requests.newsGet,payload)
     yield put(newsActions.newsReceived(news))
   } catch {

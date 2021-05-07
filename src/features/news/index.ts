@@ -1,9 +1,9 @@
-import { newsReducer } from './reducer';
+import { reducer } from './reducer';
 import * as action from './actions'
 import * as selectors from './selectors'
 
 export{
   action as newsActions,
   selectors as newsSelectors,
-  newsReducer
+  reducer as newsReducer
 }
