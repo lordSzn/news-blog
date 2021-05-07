@@ -1,8 +1,13 @@
-.content{
+.content {
   flex: 1;
 }
 .container {
   max-width: 1230px;
   margin: 0 auto;
-  padding: 100px 15px;
+  padding: 120px 15px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-flow: row dense;
+  align-items: start;
 }
+
