@@ -12,7 +12,6 @@ export const Select = () => {
     fetchLanguge()
   }, [fetchLanguge])
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault()
-  //TODO  а так можно?
   const handleChangeLanguages = (e: FormEvent<HTMLSelectElement>) => {
     window.location.pathname = `${e.currentTarget.value}/news`
   }

@@ -1,4 +1,4 @@
-import { Logo, SearchInput, Select } from "../../ui"
+import { Logo, SearchInput } from "../../ui"
 import style from "./style.module.scss"
 
 export function Header() {
@@ -9,7 +9,6 @@ export function Header() {
           <Logo/>
         </div>
         <div className={style.headerRight}>
-          {/* <Select/> */}
           <SearchInput/>
         </div>
       </div>

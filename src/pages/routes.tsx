@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { Route, Switch } from "react-router"
 import { Error404Page } from "./error404Page"
-import { Favorites } from "./favorites"
 import { Home } from "./home"
 
 interface RouteItemsType {
@@ -16,10 +15,6 @@ export const routeList: RouteItemsType[] = [
     path: "/:language/news",
     exact: true,
     component: Home,
-  },
-  {
-    path: "/favorites",
-    component: Favorites,
   },
   {
     path: "*",

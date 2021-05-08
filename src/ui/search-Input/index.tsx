@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState, FormEvent } from "react"
 import { newsActions } from "../../features"
 import { useAction, useDebounce } from "../../lib/store/hooks"
 import style from "./style.module.scss"
@@ -7,10 +7,9 @@ export function SearchInput() {
   const [value, setValue] = useState<string>("")
   const { searchNews } = useAction(newsActions)
   useDebounce(value, 1000, searchNews)
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>
-    e.preventDefault()
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault()
   return (
-    <form  className={style.search} onSubmit={handleSubmit}>
+    <form className={style.search} onSubmit={handleSubmit}>
       <input
         className={style.searchTxt}
         value={value}
