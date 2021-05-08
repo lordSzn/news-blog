@@ -1,6 +1,6 @@
 import { FC, SyntheticEvent } from "react"
 
-import { NewsType } from "../../@types/entity"
+import { NewsType } from "../../types/entity"
 import { Avatar } from "../avatar/index"
 import style from "./style.module.scss"
 

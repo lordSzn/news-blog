@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {NewsType} from './../../@types/entity'
+import {NewsType} from '../../types/entity'
 
 
 interface InitialTypes{

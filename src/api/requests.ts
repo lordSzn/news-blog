@@ -2,7 +2,7 @@ import {
   ResponceNewsType,
   ResponceLanguagesType,
   ResponceCategoryType,
-} from "./../@types/responce"
+} from "../types/responce"
 import { request } from "./config"
 
 export const newsGet = (language: string) =>
